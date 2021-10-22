@@ -22,7 +22,7 @@ requirements:
   host:
     - python
     - pip
-    - rdkit
+    - rdkit {{ rdkit_version }}
     - boost >=1.67
     - boost-cpp >=1.67
   run:
