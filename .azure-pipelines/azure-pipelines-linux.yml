@@ -8,16 +8,40 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_python3.7.____cpython:
-        CONFIG: linux_64_python3.7.____cpython
+      linux_64_python3.7.____cpythonrdkit_version2020.09.5:
+        CONFIG: linux_64_python3.7.____cpythonrdkit_version2020.09.5
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_python3.8.____cpython:
-        CONFIG: linux_64_python3.8.____cpython
+      linux_64_python3.7.____cpythonrdkit_version2021.03.5:
+        CONFIG: linux_64_python3.7.____cpythonrdkit_version2021.03.5
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_python3.9.____cpython:
-        CONFIG: linux_64_python3.9.____cpython
+      linux_64_python3.7.____cpythonrdkit_version2021.09.1:
+        CONFIG: linux_64_python3.7.____cpythonrdkit_version2021.09.1
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.8.____cpythonrdkit_version2020.09.5:
+        CONFIG: linux_64_python3.8.____cpythonrdkit_version2020.09.5
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.8.____cpythonrdkit_version2021.03.5:
+        CONFIG: linux_64_python3.8.____cpythonrdkit_version2021.03.5
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.8.____cpythonrdkit_version2021.09.1:
+        CONFIG: linux_64_python3.8.____cpythonrdkit_version2021.09.1
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.9.____cpythonrdkit_version2020.09.5:
+        CONFIG: linux_64_python3.9.____cpythonrdkit_version2020.09.5
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.9.____cpythonrdkit_version2021.03.5:
+        CONFIG: linux_64_python3.9.____cpythonrdkit_version2021.03.5
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_python3.9.____cpythonrdkit_version2021.09.1:
+        CONFIG: linux_64_python3.9.____cpythonrdkit_version2021.09.1
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
