@@ -1,0 +1,13 @@
+diff --git a/cmake/FindRDKit.cmake b/cmake/FindRDKit.cmake
+index 898b319..2caa907 100644
+--- a/cmake/FindRDKit.cmake
++++ b/cmake/FindRDKit.cmake
+@@ -32,7 +32,7 @@ set(RDKIT_FOUND "RDKit_FOUND")
+ foreach(component ${RDKit_FIND_COMPONENTS})
+   message( "Looking for RDKit component ${component}" )
+   find_file( RDKit_LIBRARY_${component}
+-    libRDKit${component}.so
++    libRDKit${component}${CMAKE_SHARED_LIBRARY_SUFFIX}
+     PATH ${RDKIT_DIR}/lib NO_DEFAULT_PATH)
+   message("RDKit_LIBRARY_${component} : ${RDKit_LIBRARY_${component}}")
+   if(${RDKit_LIBRARY_${component}} MATCHES "-NOTFOUND$")
