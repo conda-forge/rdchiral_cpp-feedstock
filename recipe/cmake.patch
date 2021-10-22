@@ -1,3 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dea25b1..1b531cf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -78,8 +78,8 @@ include_directories(${CMAKE_SOURCE_DIR})
+ 
+ add_subdirectory(rdchiral)
+ 
+-include(CTest)
+-add_subdirectory(test)
++# include(CTest)
++# add_subdirectory(test)
+ 
+ # add the uninstall support
+ configure_file(
 diff --git a/cmake/FindRDKit.cmake b/cmake/FindRDKit.cmake
 index 898b319..2caa907 100644
 --- a/cmake/FindRDKit.cmake
