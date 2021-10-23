@@ -34,7 +34,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('rdkit', max_pin='x.x') }}
-    - boost
+    - {{ pin_compatible('boost', max_pin='x.x') }}
 
 test:
   imports:
