@@ -9,22 +9,28 @@ package:
 source:
   url: https://gitlab.com/ljn917/rdchiral_cpp/-/archive/{{ git_version }}/rdchiral_cpp-{{ git_version }}.tar.gz
   sha256: 1470fdf0e3b66873cf3e7232cf7865b340594df4764e20ad46e18c97f5fc1986
+  patches:
+    - cmake.patch
 
 build:
-  number: 2
-  skip: true  # [win or osx]
+  number: 3
+  skip: true  # [win]
+  detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - python
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - cmake
+    - make  # [unix]
+    - pkg-config
   host:
     - python
     - pip
     - rdkit {{ rdkit_version }}
-    - boost >=1.67
-    - boost-cpp >=1.67
+    - boost
+    - boost-cpp
   run:
     - python
     - {{ pin_compatible('rdkit', max_pin='x.x') }}
@@ -43,7 +49,6 @@ test:
     - python test/test_rdchiral.py
     - python test/test_rdchiral3.py
     - python test/test_rdchiral4.py
-
 
 about:
   home: https://gitlab.com/ljn917/rdchiral_cpp

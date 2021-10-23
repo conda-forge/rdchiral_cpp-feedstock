@@ -89,6 +89,69 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpythonrdkit_version2021.09._" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>osx_64_python3.7.____cpythonrdkit_version2020.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpythonrdkit_version2020.09._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.7.____cpythonrdkit_version2021.03.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpythonrdkit_version2021.03._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.7.____cpythonrdkit_version2021.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpythonrdkit_version2021.09._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.8.____cpythonrdkit_version2020.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpythonrdkit_version2020.09._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.8.____cpythonrdkit_version2021.03.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpythonrdkit_version2021.03._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.8.____cpythonrdkit_version2021.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpythonrdkit_version2021.09._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpythonrdkit_version2020.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpythonrdkit_version2020.09._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpythonrdkit_version2021.03.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpythonrdkit_version2021.03._" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpythonrdkit_version2021.09.</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14273&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rdchiral_cpp-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpythonrdkit_version2021.09._" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
