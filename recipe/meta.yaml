@@ -29,12 +29,12 @@ requirements:
     - python
     - pip
     - rdkit {{ rdkit_version }}
-    - boost {{ boost_version }}
-    - boost-cpp {{ boost_version }}
+    - boost
+    - boost-cpp
   run:
     - python
     - {{ pin_compatible('rdkit', max_pin='x.x') }}
-    - {{ pin_compatible('boost', max_pin='x.x') }}
+    - boost
 
 test:
   imports:
