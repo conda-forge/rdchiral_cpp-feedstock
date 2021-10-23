@@ -1,7 +1,16 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dea25b1..1b531cf 100644
+index dea25b1..ac2c4b0 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
+@@ -39,7 +39,7 @@ set(Boost_USE_STATIC_LIBS OFF)
+ set(Boost_USE_MULTITHREADED OFF)
+ set(Boost_USE_STATIC_RUNTIME OFF)
+ find_package( RDKit COMPONENTS
+-    ChemReactions Depictor
++    ChemReactions Depictor ChemTransforms
+     MolDraw2D DistGeometry DistGeomHelpers
+     MolAlign Optimizer ForceField ForceFieldHelpers
+     Alignment Fingerprints MolTransforms EigenSolvers
 @@ -78,8 +78,8 @@ include_directories(${CMAKE_SOURCE_DIR})
  
  add_subdirectory(rdchiral)
