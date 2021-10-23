@@ -15,6 +15,14 @@ source:
 build:
   number: 3
   skip: true  # [win]
+  detect_binary_files_with_prefix: true
+  # missing_dso_whitelist:
+  #   - /lib64/libpthread.so.0
+  #   - /lib64/libc.so.6
+  #   - /lib64/libdl.so.2
+  #   - /lib64/librt.so.1
+  #   - /lib64/ld-linux-x86-64.so.2
+
 
 requirements:
   build:
