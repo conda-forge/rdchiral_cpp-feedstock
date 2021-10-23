@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dea25b1..3209c79 100644
+index dea25b1..875892b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -10,6 +10,13 @@ if(NOT CMAKE_BUILD_TYPE)
+@@ -10,12 +10,19 @@ if(NOT CMAKE_BUILD_TYPE)
        FORCE)
  endif(NOT CMAKE_BUILD_TYPE)
  
@@ -16,6 +16,13 @@ index dea25b1..3209c79 100644
  set(CMAKE_CXX_STANDARD 20)
  set(CMAKE_CXX_STANDARD_REQUIRED ON)
  
+ # note that if you haven't installed/built the toolkit with CoordGen, you'll
+ # have problems with this.
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -rdynamic")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+ if(CMAKE_BUILD_TYPE MATCHES "Release")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -O2 -Wall -DRDK_BUILD_COORDGEN_SUPPORT=ON" )
+ endif(CMAKE_BUILD_TYPE MATCHES "Release")
 @@ -39,7 +46,7 @@ set(Boost_USE_STATIC_LIBS OFF)
  set(Boost_USE_MULTITHREADED OFF)
  set(Boost_USE_STATIC_RUNTIME OFF)
@@ -49,3 +56,13 @@ index 898b319..2caa907 100644
      PATH ${RDKIT_DIR}/lib NO_DEFAULT_PATH)
    message("RDKit_LIBRARY_${component} : ${RDKit_LIBRARY_${component}}")
    if(${RDKit_LIBRARY_${component}} MATCHES "-NOTFOUND$")
+diff --git a/rdchiral/CMakeLists.txt b/rdchiral/CMakeLists.txt
+index 56a3f19..9c8eb88 100644
+--- a/rdchiral/CMakeLists.txt
++++ b/rdchiral/CMakeLists.txt
+@@ -1,3 +1,5 @@
++add_link_options(-rdynamic)
++
+ add_library(rdchiral SHARED
+     rdkit_helper.cpp
+     clean.cpp
