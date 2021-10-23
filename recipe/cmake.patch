@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dea25b1..3209c79 100644
+index dea25b1..a5d83ea 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -10,6 +10,13 @@ if(NOT CMAKE_BUILD_TYPE)
@@ -25,7 +25,19 @@ index dea25b1..3209c79 100644
      MolDraw2D DistGeometry DistGeomHelpers
      MolAlign Optimizer ForceField ForceFieldHelpers
      Alignment Fingerprints MolTransforms EigenSolvers
-@@ -78,8 +85,8 @@ include_directories(${CMAKE_SOURCE_DIR})
+@@ -56,9 +63,10 @@ find_package(PythonLibs REQUIRED)
+ message("python bin: ${PYTHON_EXECUTABLE}")
+ message("python version: ${PYTHONLIBS_VERSION_STRING}")
+ string(REGEX MATCH "^[0-9]+\.[0-9]+" PY_VERSION_MAJOR_MINOR "${PYTHONLIBS_VERSION_STRING}")
++string(REGEX MATCH "^[0-9]+" PY_VERSION_MAJOR "${PYTHONLIBS_VERSION_STRING}")
+ string(REPLACE "." "" PY_VERSION_MAJOR_MINOR "${PY_VERSION_MAJOR_MINOR}")
+ message("python version used by Boost: ${PY_VERSION_MAJOR_MINOR}")
+-find_package(Boost COMPONENTS system python${PY_VERSION_MAJOR_MINOR} REQUIRED)
++find_package(Boost COMPONENTS system python${PY_VERSION_MAJOR_MINOR} python${PY_VERSION_MAJOR} REQUIRED)
+ include_directories(${PYTHON_INCLUDE_DIRS})
+ include_directories(${Boost_INCLUDE_DIRS})
+ set( LIBS ${LIBS} Boost::python${PY_VERSION_MAJOR_MINOR} ${PYTHON_LIBRARIES})
+@@ -78,8 +86,8 @@ include_directories(${CMAKE_SOURCE_DIR})
  
  add_subdirectory(rdchiral)
  
