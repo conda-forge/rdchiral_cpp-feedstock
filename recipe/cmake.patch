@@ -50,7 +50,7 @@ index 898b319..2caa907 100644
    message("RDKit_LIBRARY_${component} : ${RDKit_LIBRARY_${component}}")
    if(${RDKit_LIBRARY_${component}} MATCHES "-NOTFOUND$")
 diff --git a/rdchiral/CMakeLists.txt b/rdchiral/CMakeLists.txt
-index 56a3f19..2309dde 100644
+index 56a3f19..0f3ec3a 100644
 --- a/rdchiral/CMakeLists.txt
 +++ b/rdchiral/CMakeLists.txt
 @@ -9,7 +9,7 @@ add_library(rdchiral SHARED
@@ -62,12 +62,17 @@ index 56a3f19..2309dde 100644
  install(TARGETS rdchiral
      LIBRARY DESTINATION lib
      PUBLIC_HEADER DESTINATION include/rdchiral
-@@ -17,7 +17,7 @@ install(TARGETS rdchiral
+@@ -17,7 +17,12 @@ install(TARGETS rdchiral
  
  if(USE_PYTHON)
  add_library(py_rdchiral SHARED python_wrapper.cpp)
 -target_link_libraries(py_rdchiral rdchiral ${LIBS} )
 +target_link_libraries(py_rdchiral rdchiral ${LIBS} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES} )
++
++if(APPLE)
++    set_target_properties(py_rdchiral PROPERTIES SUFFIX ".so")  # must be .so (not .dylib)
++endif(APPLE)
++
  set_target_properties(py_rdchiral PROPERTIES PREFIX "")
  set_target_properties(py_rdchiral PROPERTIES OUTPUT_NAME "rdchiral")
  install(TARGETS py_rdchiral
