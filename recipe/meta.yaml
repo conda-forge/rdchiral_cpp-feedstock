@@ -50,7 +50,6 @@ test:
     - python test/test_rdchiral3.py
     - python test/test_rdchiral4.py
 
-
 about:
   home: https://gitlab.com/ljn917/rdchiral_cpp
   license: MIT

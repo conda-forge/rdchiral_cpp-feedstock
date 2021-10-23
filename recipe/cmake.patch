@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dea25b1..a5d83ea 100644
+index dea25b1..2938f1c 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -10,6 +10,13 @@ if(NOT CMAKE_BUILD_TYPE)
@@ -25,7 +25,7 @@ index dea25b1..a5d83ea 100644
      MolDraw2D DistGeometry DistGeomHelpers
      MolAlign Optimizer ForceField ForceFieldHelpers
      Alignment Fingerprints MolTransforms EigenSolvers
-@@ -56,9 +63,10 @@ find_package(PythonLibs REQUIRED)
+@@ -56,12 +63,19 @@ find_package(PythonLibs REQUIRED)
  message("python bin: ${PYTHON_EXECUTABLE}")
  message("python version: ${PYTHONLIBS_VERSION_STRING}")
  string(REGEX MATCH "^[0-9]+\.[0-9]+" PY_VERSION_MAJOR_MINOR "${PYTHONLIBS_VERSION_STRING}")
@@ -36,8 +36,18 @@ index dea25b1..a5d83ea 100644
 +find_package(Boost COMPONENTS system python${PY_VERSION_MAJOR_MINOR} python${PY_VERSION_MAJOR} REQUIRED)
  include_directories(${PYTHON_INCLUDE_DIRS})
  include_directories(${Boost_INCLUDE_DIRS})
- set( LIBS ${LIBS} Boost::python${PY_VERSION_MAJOR_MINOR} ${PYTHON_LIBRARIES})
-@@ -78,8 +86,8 @@ include_directories(${CMAKE_SOURCE_DIR})
+-set( LIBS ${LIBS} Boost::python${PY_VERSION_MAJOR_MINOR} ${PYTHON_LIBRARIES})
++
++if(APPLE)
++    set( LIBS ${LIBS} Boost::python${PY_VERSION_MAJOR_MINOR} )
++else()
++    set( LIBS ${LIBS} Boost::python${PY_VERSION_MAJOR_MINOR} ${PYTHON_LIBRARIES})
++endif(APPLE)
++
+ execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1,0,prefix='${CMAKE_INSTALL_PREFIX}'))" OUTPUT_VARIABLE PYTHON_SITE_PACKAGES_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)
+ message("python site-package dir: ${PYTHON_SITE_PACKAGES_DIR}")
+ endif(USE_PYTHON)
+@@ -78,8 +92,8 @@ include_directories(${CMAKE_SOURCE_DIR})
  
  add_subdirectory(rdchiral)
  
@@ -62,7 +72,7 @@ index 898b319..2caa907 100644
    message("RDKit_LIBRARY_${component} : ${RDKit_LIBRARY_${component}}")
    if(${RDKit_LIBRARY_${component}} MATCHES "-NOTFOUND$")
 diff --git a/rdchiral/CMakeLists.txt b/rdchiral/CMakeLists.txt
-index 56a3f19..0f3ec3a 100644
+index 56a3f19..288411f 100644
 --- a/rdchiral/CMakeLists.txt
 +++ b/rdchiral/CMakeLists.txt
 @@ -9,7 +9,7 @@ add_library(rdchiral SHARED
@@ -74,16 +84,28 @@ index 56a3f19..0f3ec3a 100644
  install(TARGETS rdchiral
      LIBRARY DESTINATION lib
      PUBLIC_HEADER DESTINATION include/rdchiral
-@@ -17,7 +17,12 @@ install(TARGETS rdchiral
+@@ -17,7 +17,24 @@ install(TARGETS rdchiral
  
  if(USE_PYTHON)
  add_library(py_rdchiral SHARED python_wrapper.cpp)
 -target_link_libraries(py_rdchiral rdchiral ${LIBS} )
-+target_link_libraries(py_rdchiral rdchiral ${LIBS} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES} )
 +
 +if(APPLE)
 +    set_target_properties(py_rdchiral PROPERTIES SUFFIX ".so")  # must be .so (not .dylib)
++
++    # On OSX + Clang this link flag is apparently necessary in order to avoid
++    # undefined references to symbols defined in the Python library. See also:
++    # https://github.com/potassco/clingo/issues/79
++    # https://stackoverflow.com/questions/25421479/clang-and-undefined-symbols-when-building-a-library
++    # https://cmake.org/pipermail/cmake/2017-March/065115.html
++    set_target_properties(py_rdchiral PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++
++else()
++    # Interpreter is statically linked on macOS so do not use `libpython`.
++    SET(py_rdchiral_LIBRARIES ${PYTHON_LIBRARIES})
 +endif(APPLE)
++
++target_link_libraries(py_rdchiral rdchiral ${LIBS} ${Boost_LIBRARIES} ${py_rdchiral_LIBRARIES} )
 +
  set_target_properties(py_rdchiral PROPERTIES PREFIX "")
  set_target_properties(py_rdchiral PROPERTIES OUTPUT_NAME "rdchiral")
