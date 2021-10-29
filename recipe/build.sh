@@ -6,6 +6,7 @@ cd build/
 cmake -DCMAKE_BUILD_TYPE=Release \
     -DRDKIT_DIR=${PREFIX} \
     -DUSE_PYTHON=ON \
+    -DRDCHIRALCPP_BUILD_TESTS=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
     ..
 
