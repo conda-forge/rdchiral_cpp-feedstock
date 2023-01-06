@@ -5,35 +5,26 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-10.15
+    vmImage: macOS-11
   strategy:
     matrix:
-      osx_64_python3.7.____cpythonrdkit_version2020.09._:
-        CONFIG: osx_64_python3.7.____cpythonrdkit_version2020.09._
+      osx_64_python3.10.____cpythonrdkit_version2022.03._:
+        CONFIG: osx_64_python3.10.____cpythonrdkit_version2022.03._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpythonrdkit_version2021.03._:
-        CONFIG: osx_64_python3.7.____cpythonrdkit_version2021.03._
+      osx_64_python3.10.____cpythonrdkit_version2022.09._:
+        CONFIG: osx_64_python3.10.____cpythonrdkit_version2022.09._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpythonrdkit_version2021.09._:
-        CONFIG: osx_64_python3.7.____cpythonrdkit_version2021.09._
+      osx_64_python3.8.____cpythonrdkit_version2022.03._:
+        CONFIG: osx_64_python3.8.____cpythonrdkit_version2022.03._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.8.____cpythonrdkit_version2020.09._:
-        CONFIG: osx_64_python3.8.____cpythonrdkit_version2020.09._
+      osx_64_python3.8.____cpythonrdkit_version2022.09._:
+        CONFIG: osx_64_python3.8.____cpythonrdkit_version2022.09._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.8.____cpythonrdkit_version2021.03._:
-        CONFIG: osx_64_python3.8.____cpythonrdkit_version2021.03._
+      osx_64_python3.9.____cpythonrdkit_version2022.03._:
+        CONFIG: osx_64_python3.9.____cpythonrdkit_version2022.03._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.8.____cpythonrdkit_version2021.09._:
-        CONFIG: osx_64_python3.8.____cpythonrdkit_version2021.09._
-        UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpythonrdkit_version2020.09._:
-        CONFIG: osx_64_python3.9.____cpythonrdkit_version2020.09._
-        UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpythonrdkit_version2021.03._:
-        CONFIG: osx_64_python3.9.____cpythonrdkit_version2021.03._
-        UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpythonrdkit_version2021.09._:
-        CONFIG: osx_64_python3.9.____cpythonrdkit_version2021.09._
+      osx_64_python3.9.____cpythonrdkit_version2022.09._:
+        CONFIG: osx_64_python3.9.____cpythonrdkit_version2022.09._
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
