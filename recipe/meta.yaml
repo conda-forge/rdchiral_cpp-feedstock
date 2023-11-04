@@ -27,13 +27,10 @@ requirements:
     - python
     - pip
     - rdkit {{ rdkit_version }}
-    - libboost >=1.67
-    - libboost-headers >=1.67
-    - libboost-python-devel >=1.67
+    - libboost-python-devel
   run:
     - python
     - {{ pin_compatible('rdkit', max_pin='x.x') }}
-    - {{ pin_compatible('libboost', max_pin='x.x') }}
 
 test:
   imports:
