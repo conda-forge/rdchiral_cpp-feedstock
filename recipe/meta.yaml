@@ -11,7 +11,7 @@ source:
   sha256: 09f71f7b3c16eb15452226908b66d57b9a779886053adc801e638cd643fdfaa5
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
@@ -27,12 +27,11 @@ requirements:
     - python
     - pip
     - rdkit {{ rdkit_version }}
-    - boost >=1.67
-    - boost-cpp >=1.67
+    - libboost-python-devel >=1.67
+    - libboost-headers
   run:
     - python
     - {{ pin_compatible('rdkit', max_pin='x.x') }}
-    - {{ pin_compatible('boost', max_pin='x.x') }}
 
 test:
   imports:
