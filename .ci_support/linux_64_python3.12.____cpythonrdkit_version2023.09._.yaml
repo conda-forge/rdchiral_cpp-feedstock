@@ -17,8 +17,8 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_cpython
+- 3.12.* *_cpython
 rdkit_version:
-- 2023.03.*
+- 2023.09.*
 target_platform:
 - linux-64

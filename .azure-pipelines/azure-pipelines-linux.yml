@@ -24,6 +24,14 @@ jobs:
         CONFIG: linux_64_python3.11.____cpythonrdkit_version2023.09._
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.12.____cpythonrdkit_version2023.03._:
+        CONFIG: linux_64_python3.12.____cpythonrdkit_version2023.03._
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.12.____cpythonrdkit_version2023.09._:
+        CONFIG: linux_64_python3.12.____cpythonrdkit_version2023.09._
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_python3.8.____cpythonrdkit_version2023.03._:
         CONFIG: linux_64_python3.8.____cpythonrdkit_version2023.03._
         UPLOAD_PACKAGES: 'True'
