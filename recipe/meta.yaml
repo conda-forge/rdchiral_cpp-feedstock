@@ -27,6 +27,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - rdkit {{ rdkit_version }}
     - libboost-python-devel
   run:
