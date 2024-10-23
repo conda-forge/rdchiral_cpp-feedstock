@@ -24,7 +24,5 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.12.* *_cpython
-rdkit_version:
-- 2023.09.*
 target_platform:
 - osx-64
