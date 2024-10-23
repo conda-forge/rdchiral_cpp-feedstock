@@ -28,7 +28,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - rdkit {{ rdkit_version }}
+    - rdkit
     - libboost-python-devel
   run:
     - python
