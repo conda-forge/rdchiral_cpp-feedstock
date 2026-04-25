@@ -1,6 +1,6 @@
 {% set name = "rdchiral_cpp" %}
-{% set version = "1.1.4" %}
-{% set git_version = "1.1.4" %}
+{% set version = "1.1.5" %}
+{% set git_version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://gitlab.com/ljn917/rdchiral_cpp/-/archive/{{ git_version }}/rdchiral_cpp-{{ git_version }}.tar.gz
-  sha256: db6d28fdc545354387e3ea34f8857258502f9e589304d3bb088c5771bba3a63d
+  sha256: ab8b8de8e70fa3a797956aa39282be8b944c08f212ba7c8554e382af8f564069
 
 build:
   number: 6
