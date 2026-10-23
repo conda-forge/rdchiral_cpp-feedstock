@@ -1,4 +1,6 @@
 conda_forge_output_validation: true
+provider:
+  osx_arm64: default
 github:
   branch_name: main
   tooling_branch_name: main
